@@ -1,6 +1,5 @@
 import { Providers } from '@/app/providers'
 import { Container } from '@/components/Container'
-import { Navigation } from '@/components/Navigation'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import clsx from 'clsx'
@@ -9,14 +8,12 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Footer from '@/components/Footer'
-import NextTopLoader from 'nextjs-toploader'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const meta = {
   title: 'JULOG',
-  description:
-    'Sleep deprived father. FE Engineer in China. Lover of Ramen and Kpop',
+  description: `JongUng's Log 개발하면서 공부한 것, 느낀 것을 기록하는 공간입니다.`,
   image: `${WEBSITE_HOST_URL}/og-preview.jpg`,
 }
 
