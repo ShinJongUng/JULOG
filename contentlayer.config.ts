@@ -3,6 +3,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import rehypeCodeTitles from 'rehype-code-titles'
+import remarkToc from 'remark-toc'
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -24,6 +26,16 @@ const Post = defineDocumentType(() => ({
       description: 'The description of the post',
       required: true,
     },
+    category: {
+      type: 'string',
+      description: 'The category of the post',
+      required: true,
+    },
+    readingMinutes: {
+      type: 'number',
+      description: 'The reading time of the post',
+      required: true,
+    },
   },
   computedFields: {
     url: {
@@ -37,9 +49,10 @@ export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, [remarkToc, { heading: '목차' }]],
     rehypePlugins: [
       rehypeSlug,
+      rehypeCodeTitles,
       [
         rehypePrettyCode,
         {

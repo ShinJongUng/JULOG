@@ -9,11 +9,12 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Footer from '@/components/Footer'
+import NextTopLoader from 'nextjs-toploader'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const meta = {
-  title: 'Ungs Devlog',
+  title: 'JULOG',
   description:
     'Sleep deprived father. FE Engineer in China. Lover of Ramen and Kpop',
   image: `${WEBSITE_HOST_URL}/og-preview.jpg`,
@@ -22,7 +23,7 @@ const meta = {
 export const metadata: Metadata = {
   title: {
     default: meta.title,
-    template: '%s | Ungs Devlog',
+    template: '%s | JULOG',
   },
   description: meta.description,
   openGraph: {
@@ -58,15 +59,19 @@ export default function RootLayout({
     <html lang="ko">
       <body className={clsx(inter.className, 'bg-zinc-50 dark:bg-gray-900')}>
         <Providers>
-          <header className="py-4">
+          {/* <NextTopLoader showSpinner={false} color="#378B29" /> */}
+          <div className="absolute top-0 -z-10 -mt-40 h-60 w-full bg-gradient-to-r from-primary to-[#378B29] opacity-20 blur-2xl"></div>
+          <header className="py-2">
             <Container>
               <div className="flex items-center justify-between py-4">
-                <h3>Ungs Devlog</h3>
+                <Link href="/" className="m-1 rounded-md p-1 hover:opacity-50">
+                  <div className="text-xl font-bold">JULOG</div>
+                </Link>
                 <ThemeSwitch />
               </div>
             </Container>
           </header>
-          <main>
+          <main className="mt-6">
             <Container>{children}</Container>
           </main>
           <Footer />

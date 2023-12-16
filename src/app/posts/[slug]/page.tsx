@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/ProgressBar'
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import { allPosts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
@@ -64,7 +65,8 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
-      <h1>{post.title}</h1>
+      <ProgressBar />
+      <h1 className="text-4xl font-bold">{post.title}</h1>
       <time className="my-4 block text-sm text-zinc-400" dateTime={post.date}>
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>

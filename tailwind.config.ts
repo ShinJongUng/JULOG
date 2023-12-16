@@ -8,6 +8,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
+  theme: {
+    extend: {
+      colors(utils) {
+        return {
+          primary: '#74D680',
+        }
+      },
+    },
+  },
   plugins: [typographyPlugin],
 }
 export default config

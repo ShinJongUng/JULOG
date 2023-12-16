@@ -1,7 +1,9 @@
 import { PostCard } from '@/components/PostCard'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
-import Link from 'next/link'
+import { RoughNotation } from 'react-rough-notation'
+import { MotionDiv } from '@/components/FramerMotion'
+import { fadeIn, fadeInUp } from '@/lib/animation'
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
@@ -10,41 +12,39 @@ export default function Home() {
 
   return (
     <div>
-      <div className="space-y-7">
-        <h1>Home Page</h1>
-        <p>
-          Next.js starter template for your next blog or personal site. Built
-          with:
-        </p>
-        <ul className="my-6 list-disc space-y-2 pl-4">
-          <li>
-            <Link href="https://nextjs.org/docs/app">Next.js - App Router</Link>
-          </li>
-          <li>
-            <Link href="https://www.contentlayer.dev/">Contentlayer</Link>
-          </li>
-          <li>MDX</li>
-          <li>Tailwind CSS</li>
-          <li>Typescript</li>
-        </ul>
-
-        <a
-          href="https://github.com/ChangoMan/nextjs-typescript-mdx-blog"
-          className="inline-block rounded-md bg-blue-600 px-7 py-3 text-white hover:bg-blue-700 hover:text-white dark:text-white dark:hover:text-white"
+      <div className="whitespace-pre-line text-center text-3xl font-bold leading-10 sm:mx-0 sm:text-left sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl">
+        안녕하세요!
+        <br />
+        <RoughNotation
+          type="underline"
+          show
+          strokeWidth={2}
+          padding={1}
+          color="#999999"
         >
-          Get the source code!
-        </a>
+          <span className="background-animate bg-gradient-to-r from-primary to-[#378B29] bg-clip-text text-transparent">
+            JULOG
+          </span>
+        </RoughNotation>
+        에 오신 것을 환영합니다.
+        <br />
       </div>
 
-      <div className="mt-16">
-        <h2>From the blog</h2>
-        <p className="mt-2 leading-8">
-          Blog posts are written with MDX and processed through Contentlayer.
-        </p>
-      </div>
-      <div className="mt-10 space-y-12 border-t border-gray-200 pt-10 dark:border-gray-700">
+      <p className="mt-16 text-center text-gray-500 sm:text-left">
+        개발하면서 공부한 것, 느낀 것을 기록하는 공간입니다.
+      </p>
+
+      <div className="mt-8 space-y-12 border-t border-gray-200 pt-10 dark:border-gray-700">
         {posts.map((post, idx) => (
-          <PostCard key={idx} {...post} />
+          <MotionDiv
+            key={idx}
+            initial="initial"
+            variants={fadeInUp}
+            whileInView="animate"
+            viewport={{ amount: 0.7, once: true }}
+          >
+            <PostCard key={idx} {...post} />
+          </MotionDiv>
         ))}
       </div>
     </div>
