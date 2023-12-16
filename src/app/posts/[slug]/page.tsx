@@ -1,3 +1,4 @@
+import Giscus from '@/components/Giscus'
 import ProgressBar from '@/components/ProgressBar'
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import { allPosts } from 'contentlayer/generated'
@@ -73,6 +74,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       <article className="prose dark:prose-invert">
         <MDXContent components={mdxComponents} />
       </article>
+      <Giscus />
     </div>
   )
 }
