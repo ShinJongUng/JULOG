@@ -8,6 +8,7 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Footer from '@/components/Footer'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -54,6 +55,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="xE4jYanHs0G9VjP8PR-0Rof2Z1yie_KaS1Iu9w7Net4"
+        />
+      </Head>
       <body className={clsx(inter.className, 'bg-zinc-50 dark:bg-gray-900')}>
         <Providers>
           {/* <NextTopLoader showSpinner={false} color="#378B29" /> */}
