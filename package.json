@@ -22,6 +22,7 @@
     "next": "13.4.19",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
+    "nextjs-google-analytics": "^2.3.3",
     "nextjs-toploader": "^1.6.4",
     "postcss": "8.4.28",
     "react": "18.2.0",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "@types/gtag.js": "^0.0.18",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3"
   }

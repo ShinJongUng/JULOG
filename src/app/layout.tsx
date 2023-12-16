@@ -55,12 +55,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <Head>
+      <head>
         <meta
           name="google-site-verification"
           content="xE4jYanHs0G9VjP8PR-0Rof2Z1yie_KaS1Iu9w7Net4"
         />
-      </Head>
+      </head>
       <body className={clsx(inter.className, 'bg-zinc-50 dark:bg-gray-900')}>
         <Providers>
           {/* <NextTopLoader showSpinner={false} color="#378B29" /> */}

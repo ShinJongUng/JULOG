@@ -2,6 +2,7 @@
 
 import { ThemeProvider, useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 import { createContext, useEffect, useRef } from 'react'
 
 function usePrevious<T>(value: T) {
@@ -46,6 +47,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <AppContext.Provider value={{ previousPathname }}>
+      <GoogleAnalytics trackPageViews />
       <ThemeProvider attribute="class" disableTransitionOnChange>
         <ThemeWatcher />
         {children}
