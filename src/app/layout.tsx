@@ -4,13 +4,9 @@ import ThemeSwitch from '@/components/ThemeSwitch'
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Footer from '@/components/Footer'
-import Head from 'next/head'
-
-const inter = Inter({ subsets: ['latin'] })
 
 const meta = {
   title: 'JULOG',
@@ -61,7 +57,7 @@ export default function RootLayout({
           content="xE4jYanHs0G9VjP8PR-0Rof2Z1yie_KaS1Iu9w7Net4"
         />
       </head>
-      <body className={clsx(inter.className, 'bg-zinc-50 dark:bg-gray-900')}>
+      <body className={clsx('bg-zinc-50 dark:bg-gray-900')}>
         <Providers>
           {/* <NextTopLoader showSpinner={false} color="#378B29" /> */}
           <div className="absolute top-0 -z-10 -mt-40 h-60 w-full bg-gradient-to-r from-primary to-[#378B29] opacity-20 blur-2xl"></div>
