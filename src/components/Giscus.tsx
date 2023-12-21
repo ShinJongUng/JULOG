@@ -17,7 +17,7 @@ export default function Giscus() {
     scriptElem.async = true
     scriptElem.crossOrigin = 'anonymous'
 
-    scriptElem.setAttribute('data-repo', 'ShinJongUng/JWLOG')
+    scriptElem.setAttribute('data-repo', 'ShinJongUng/JULOG')
     scriptElem.setAttribute('data-repo-id', 'R_kgDOK6Wdsw')
     scriptElem.setAttribute('data-category', 'General')
     scriptElem.setAttribute('data-category-id', 'DIC_kwDOK6Wds84Cbyfe')
