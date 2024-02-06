@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import './globals.css'
 import Footer from '@/components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const meta = {
   title: 'JULOG',
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
       </head>
       <body className={clsx('bg-zinc-50 dark:bg-gray-900')}>
+        <SpeedInsights />
         <Providers>
           {/* <NextTopLoader showSpinner={false} color="#378B29" /> */}
           <div className="absolute top-0 -z-10 -mt-40 h-60 w-full bg-gradient-to-r from-primary to-[#378B29] opacity-20 blur-2xl"></div>
