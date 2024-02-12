@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://www.julog.kr
+Sitemap: https://www.julog.kr/sitemap.xml
