@@ -34,18 +34,20 @@ export default function Footer() {
             {social.map((item) => {
               const Icon = item.icon
               return (
-                <Link
-                  key={item.title}
-                  href={item.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="items-centert mx-4 flex"
-                >
-                  <Icon className="h-5 w-5 fill-stone-500" />
-                  <span className="ml-2 hidden text-stone-500 sm:block">
-                    {item.title}
-                  </span>
-                </Link>
+                <li key={item.title}>
+                  <Link
+                    href={item.url}
+                    aria-label={item.title + '로 이동'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="items-centert mx-4 flex"
+                  >
+                    <Icon className="h-5 w-5 fill-stone-500" />
+                    <span className="ml-2 hidden text-stone-500 sm:block">
+                      {item.title}
+                    </span>
+                  </Link>
+                </li>
               )
             })}
           </ul>
