@@ -52,12 +52,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <head>
-        <meta
-          name="google-site-verification"
-          content="xE4jYanHs0G9VjP8PR-0Rof2Z1yie_KaS1Iu9w7Net4"
-        />
-      </head>
       <body className={clsx('bg-zinc-50 dark:bg-gray-900')}>
         <SpeedInsights />
         <Providers>
