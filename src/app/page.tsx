@@ -36,15 +36,9 @@ export default function Home() {
 
       <div className="mt-8 space-y-12 border-t border-gray-200 pt-10 dark:border-gray-700">
         {posts.map((post, idx) => (
-          <MotionDiv
-            key={idx}
-            initial="initial"
-            variants={fadeInUp}
-            whileInView="animate"
-            viewport={{ amount: 0.7, once: true }}
-          >
+          <div key={idx}>
             <PostCard key={idx} {...post} />
-          </MotionDiv>
+          </div>
         ))}
       </div>
     </div>

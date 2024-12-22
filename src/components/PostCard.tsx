@@ -2,7 +2,6 @@ import { Post } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { CiClock1, CiCalendar } from 'react-icons/ci'
-import ViewCounter from './ViewCounter'
 
 export function PostCard(post: Post) {
   return (
@@ -31,9 +30,6 @@ export function PostCard(post: Post) {
               <CiClock1 className="inline-block" />
               {post.readingMinutes}분
             </div>
-            <div>
-              <ViewCounter slug={post.url.split('/posts/')[1]} />
-            </div>
           </div>
         </div>
       </div>
@@ -47,9 +43,6 @@ export function PostCard(post: Post) {
         <div className="line-clamp-1 flex items-center gap-1">
           <CiClock1 className="inline-block" />
           <div className="w-5">{post.readingMinutes}분</div>
-        </div>
-        <div>
-          <ViewCounter slug={post.url.split('/posts/')[1]} />
         </div>
       </div>
     </article>

@@ -1,6 +1,5 @@
 import Giscus from '@/components/Giscus'
 import ProgressBar from '@/components/ProgressBar'
-import ViewCounter from '@/components/ViewCounter'
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import { allPosts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
@@ -80,9 +79,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         <div className="line-clamp-1 flex items-center gap-1">
           <CiClock1 className="inline-block" />
           <div className="w-8">{post.readingMinutes}분</div>
-        </div>
-        <div>
-          <ViewCounter slug={post.url.split('/posts/')[1]} blogPage />
         </div>
       </div>
       <article className="prose w-full dark:prose-invert">
